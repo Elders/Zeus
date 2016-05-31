@@ -1,0 +1,18 @@
+{
+  "data_dir": "data",
+  "log_level": "INFO",
+  "check_update_interval":"10s",
+  "ports" : {
+    "http" : 8500
+  },
+  "checks": [
+	  {
+		"id": "sys-health",
+		"name": "System Information",
+		"script": "SysHealth.Win.Console.exe",
+		"interval": "10s",
+		"timeout":"10s"
+	  }
+  ]
+}
+
