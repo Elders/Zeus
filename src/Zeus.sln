@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysHealth.Win.Console", "wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysHealth.Win.Lib", "win\SysHealth.Win.Lib\SysHealth.Win.Lib.csproj", "{684589E5-31FA-4FC9-BA70-FEF110A7CFD5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SysHealth.Linux.Console", "unix\SysHealth.Linux.Console\SysHealth.Linux.Console.xproj", "{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Zeus.Linux.Cli", "unix\SysHealth.Linux.Console\Zeus.Linux.Cli.xproj", "{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

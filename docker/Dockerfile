@@ -37,6 +37,7 @@ EXPOSE 8400 8500 8600 8600/udp
 
 WORKDIR /var/
 
-ENTRYPOINT ["bash","./consul/entrypoint.sh","agent"]
+#ENTRYPOINT ["bash","./consul/entrypoint.sh","agent"]
+ENTRYPOINT ["/var/app/health"]
 
 

@@ -1,4 +1,4 @@
-﻿namespace SysHealth.Linux.Console.lib
+﻿namespace Zeus.Linux.Cli
 {
     public class HealthCheckerConfiguration
     {

@@ -2,7 +2,7 @@
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true,
-    "outputName": "health"
+    "outputName": "Zeus.Linux.Cli"
   },
 
   "dependencies": {
@@ -10,7 +10,7 @@
       "version": "1.0.0-rc2-3002702"
     },
     "Newtonsoft.Json": "8.0.3",
-    //"Microsoft.NETCore.Runtime": "1.0.2-rc2-24027",
+    "Microsoft.NETCore.Runtime": "1.0.2-rc2-24027",
     "System.Runtime.Serialization.Primitives": "4.0.10-*"
   },
 
@@ -42,6 +42,5 @@
     "linuxmint.17.3-x64": { },
     "osx.10.10-x64": { },
     "osx.10.11-x64": { }
-
   }
 }
