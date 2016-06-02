@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Zeus.Linux.Cli
 {
     public class WindowsRamMontior : IMemoryMonitor
@@ -7,7 +9,29 @@ namespace Zeus.Linux.Cli
 
         public MemoryInfo GetMemoryUsage()
         {
-            return new MemoryInfo(16000, 6000);
+            return new MemoryInfo(GetMemoryTotal(), GetMemoryFree());
+        }
+
+        private decimal GetMemoryTotal()
+        {
+            var select = new SelectQuery("Win32_OPeratingSystem");
+            var searcher = new ManagementObjectSearcher(select);
+
+            ManagementObjectCollection collection = searcher.Get();
+            ManagementObject queryObj = collection.Cast<ManagementObject>().First();
+
+            return Convert.ToInt32(queryObj["TotalVisibleMemorySize"]) / 1024;
+        }
+
+        private decimal GetMemoryFree()
+        {
+            var select = new SelectQuery("Win32_OPeratingSystem");
+            var searcher = new ManagementObjectSearcher(select);
+
+            ManagementObjectCollection collection = searcher.Get();
+            ManagementObject queryObj = collection.Cast<ManagementObject>().First();
+
+            return Convert.ToInt32(queryObj["FreePhysicalMemory"]) / 1024;
         }
     }
 }

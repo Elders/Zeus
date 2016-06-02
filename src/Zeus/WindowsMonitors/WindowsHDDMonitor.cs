@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Zeus.Linux.Cli
 {
@@ -8,7 +9,22 @@ namespace Zeus.Linux.Cli
 
         public IEnumerable<DriveInfo> GetHDDUsage()
         {
-            yield return new DriveInfo("total", 80, 40);
+            SelectQuery query = new SelectQuery("Select * from Win32_LogicalDisk");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+            ManagementObjectCollection queryCollection = searcher.Get();
+
+            HashSet<DriveInfo> disksInfo = new HashSet<DriveInfo>();
+
+            foreach (ManagementObject mo in queryCollection)
+            {
+                var total = Convert.ToInt64(mo["Size"]) / 1042 / 1024;
+                var free = Convert.ToInt64(mo["FreeSpace"]) / 1042 / 1024;
+                var volume = mo["Name"].ToString();
+
+                disksInfo.Add(new DriveInfo(volume, total, free));
+            }
+
+            yield return disksInfo;
         }
     }
 }
