@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Zeus.Cli": {
+      "commandName": "Project"
+    },
+    "Debug|Any CPU": {
+      "executablePath": "cmd"
+    }
+  }
+}

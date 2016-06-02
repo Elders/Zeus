@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win", "Win", "{7F290773-24D3-4293-84B3-CAB59FEB580E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unix", "unix", "{ED5CABE1-1FD3-4A0F-9DEF-934740AB5F4F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysHealth.Win.Console", "win\SysHealth.Win.Console\SysHealth.Win.Console.csproj", "{911866B7-87FF-4865-9F84-3EDCDA34A738}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysHealth.Win.Lib", "win\SysHealth.Win.Lib\SysHealth.Win.Lib.csproj", "{684589E5-31FA-4FC9-BA70-FEF110A7CFD5}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Zeus.Linux.Cli", "unix\SysHealth.Linux.Console\Zeus.Linux.Cli.xproj", "{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Zeus.Cli", "Zeus.Cli\Zeus.Cli.xproj", "{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{911866B7-87FF-4865-9F84-3EDCDA34A738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{911866B7-87FF-4865-9F84-3EDCDA34A738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{911866B7-87FF-4865-9F84-3EDCDA34A738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{911866B7-87FF-4865-9F84-3EDCDA34A738}.Release|Any CPU.Build.0 = Release|Any CPU
-		{684589E5-31FA-4FC9-BA70-FEF110A7CFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{684589E5-31FA-4FC9-BA70-FEF110A7CFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{684589E5-31FA-4FC9-BA70-FEF110A7CFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{684589E5-31FA-4FC9-BA70-FEF110A7CFD5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,10 +18,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{911866B7-87FF-4865-9F84-3EDCDA34A738} = {7F290773-24D3-4293-84B3-CAB59FEB580E}
-		{684589E5-31FA-4FC9-BA70-FEF110A7CFD5} = {7F290773-24D3-4293-84B3-CAB59FEB580E}
-		{DEA14F0C-D5BD-4B07-999B-F3F53D321DD1} = {ED5CABE1-1FD3-4A0F-9DEF-934740AB5F4F}
 	EndGlobalSection
 EndGlobal
