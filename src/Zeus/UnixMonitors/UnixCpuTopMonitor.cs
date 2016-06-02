@@ -7,10 +7,10 @@ namespace Zeus.Linux.Cli
         public CpuInfo GetCpuUsage()
         {
             string availableCpuAsString;
-            double result = 0;
+            decimal result = 0;
             if (UnixTop.Execute().TryGetValue("cpu_free", out availableCpuAsString))
             {
-                if (!double.TryParse(availableCpuAsString, out result))
+                if (!decimal.TryParse(availableCpuAsString, out result))
                 {
                     throw new ArgumentException("CPU usage cannot be parsed to float (" + availableCpuAsString + ")");
                 }

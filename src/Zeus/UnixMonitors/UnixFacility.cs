@@ -8,7 +8,7 @@ namespace Zeus.Linux.Cli.UnixMonitors
     {
         Dictionary<Type, Func<object>> factories = new Dictionary<Type, Func<object>>();
 
-        public UnixFacility(string[] args)
+        public UnixFacility()
         {
             Register<ICpuMonitor>(() => new UnixCpuTopMonitor());
             Register<IHDDMonitor>(() => new UnixHDDDFMonitor());

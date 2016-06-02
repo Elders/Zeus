@@ -6,11 +6,11 @@
     }
     public class CpuInfo
     {
-        public CpuInfo(double usageInPercent)
+        public CpuInfo(decimal usageInPercent)
         {
             UsageInPercent = usageInPercent;
         }
 
-        public double UsageInPercent { get; private set; }
+        public decimal UsageInPercent { get; private set; }
     }
 }

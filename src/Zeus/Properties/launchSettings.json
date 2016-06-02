@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Zeus.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "help"
+    }
+  }
+}

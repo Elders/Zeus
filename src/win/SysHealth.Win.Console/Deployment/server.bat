@@ -1,1 +1,0 @@
-consul agent -server -config-dir=config -data-dir=data -advertise=192.168.0.101 -client=192.168.0.101 -data-dir=data -join=192.168.99.100 -retry-join=192.168.99.100 -bootstrap-expect=2 -ui
