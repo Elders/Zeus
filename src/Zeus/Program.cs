@@ -40,7 +40,7 @@ namespace Zeus.Linux.Cli
         {
             foreach (var item in errors)
             {
-                if (item.Tag == ErrorType.BadVerbSelectedError)
+                if (item.Tag == ErrorType.BadVerbSelectedError || item.Tag == ErrorType.HelpRequestedError || item.Tag == ErrorType.HelpVerbRequestedError)
                     continue;
                 System.Console.WriteLine(item.ToString());
             }

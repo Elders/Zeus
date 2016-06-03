@@ -6,13 +6,13 @@ using Zeus.Linux.Cli.Monitoring;
 
 namespace Zeus.Linux.Cli.Commands
 {
-    public class DSLCpu
+    public class CpuResult
     {
-        public DSLCpu(CpuInfo info)
+        public CpuResult(CpuInfo info)
         {
-            usage = info.UsageInPercent;
+            Usage = info.UsageInPercent;
         }
 
-        public decimal usage { get; set; }
+        public decimal Usage { get; set; }
     }
 }

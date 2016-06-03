@@ -2,7 +2,10 @@
   "profiles": {
     "Zeus.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "help"
+      "commandLineArgs": "machine -f -e drives.total.free:below:50"
+    },
+    "Zeus": {
+      "commandName": "Project"
     }
   }
 }
