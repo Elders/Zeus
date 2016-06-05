@@ -17,6 +17,6 @@
 
         public decimal FreeMemory { get; private set; }
 
-        public decimal UsedMemoryPercent { get { return ((TotalMemory - FreeMemory) / TotalMemory) * 100; } }
+        public decimal UsedMemoryPercent { get { return (TotalMemory == 0) ? 0 : ((TotalMemory - FreeMemory) / TotalMemory) * 100; } }
     }
 }

@@ -22,6 +22,6 @@ namespace Zeus.Monitors
 
         public decimal FreeSpace { get; private set; }
 
-        public decimal UsedSpaceInPercent { get { return ((TotalSpace - FreeSpace) / TotalSpace) * 100; } }
+        public decimal UsedSpaceInPercent { get { return (TotalSpace == 0) ? 0 : ((TotalSpace - FreeSpace) / TotalSpace) * 100; } }
     }
 }
