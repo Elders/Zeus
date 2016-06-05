@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Management;
 namespace Zeus.Linux.Cli
 {
     public class WindowsHDDMonitor : IHDDMonitor
@@ -13,18 +13,14 @@ namespace Zeus.Linux.Cli
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
             ManagementObjectCollection queryCollection = searcher.Get();
 
-            HashSet<DriveInfo> disksInfo = new HashSet<DriveInfo>();
-
             foreach (ManagementObject mo in queryCollection)
             {
                 var total = Convert.ToInt64(mo["Size"]) / 1042 / 1024;
                 var free = Convert.ToInt64(mo["FreeSpace"]) / 1042 / 1024;
                 var volume = mo["Name"].ToString();
 
-                disksInfo.Add(new DriveInfo(volume, total, free));
+                yield return new DriveInfo(volume, total, free);
             }
-
-            yield return disksInfo;
         }
     }
 }

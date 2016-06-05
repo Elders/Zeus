@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Linq;
+using System.Management;
 namespace Zeus.Linux.Cli
 {
     public class WindowsCpuMonitor : ICpuMonitor
@@ -8,8 +9,7 @@ namespace Zeus.Linux.Cli
         {
             var select = new SelectQuery("Win32_PerfFormattedData_PerfOS_Processor");
             var searcher = new ManagementObjectSearcher(select);
-
-            ManagementObjectCollection collection = searcher.Get();
+            var collection = searcher.Get();
             ManagementObject queryObj = collection.Cast<ManagementObject>().First();
 
             return new CpuInfo(100 - Convert.ToInt32(queryObj["PercentIdleTime"]));

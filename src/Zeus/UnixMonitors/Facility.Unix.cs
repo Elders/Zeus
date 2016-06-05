@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using Zeus.Linux.Cli.Monitoring;
 
-namespace Zeus.Linux.Cli.UnixMonitors
+namespace Zeus.Linux.Cli
 {
-    public class WindowsFacility : IMonitorFacility
+    public class Facility : IMonitorFacility
     {
         Dictionary<Type, Func<object>> factories = new Dictionary<Type, Func<object>>();
 
-        public WindowsFacility()
+        public Facility()
         {
-            Register<ICpuMonitor>(() => new WindowsCpuMonitor());
-            Register<IHDDMonitor>(() => new WindowsHDDMonitor());
-            Register<IMemoryMonitor>(() => new WindowsRamMontior());
+            Register<ICpuMonitor>(() => new UnixCpuTopMonitor());
+            Register<IHDDMonitor>(() => new UnixHDDDFMonitor());
+            Register<IMemoryMonitor>(() => new UnixRamTOPMontior());
         }
 
         public void Register<T>(Func<T> factory)

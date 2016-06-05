@@ -1,5 +1,6 @@
-﻿
-using System;
+﻿using System;
+using System.Management;
+using System.Linq;
 
 namespace Zeus.Linux.Cli
 {
