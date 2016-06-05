@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Zeus.Linux.Cli.Monitoring;
+using Zeus.Monitors;
+using Zeus.Monitors.Windows;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Facility
 {
     public class Facility : IMonitorFacility
     {

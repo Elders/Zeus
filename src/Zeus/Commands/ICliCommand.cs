@@ -1,4 +1,4 @@
-﻿namespace Zeus.Linux.Cli.Commands
+﻿namespace Zeus.Commands
 {
     public interface ICliCommand
     {

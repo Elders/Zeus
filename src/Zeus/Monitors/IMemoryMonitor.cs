@@ -1,4 +1,4 @@
-﻿namespace Zeus.Linux.Cli
+﻿namespace Zeus.Monitors
 {
     public interface IMemoryMonitor
     {

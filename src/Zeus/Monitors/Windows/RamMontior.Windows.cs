@@ -2,7 +2,7 @@
 using System.Management;
 using System.Linq;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Windows
 {
     public class WindowsRamMontior : IMemoryMonitor
     {

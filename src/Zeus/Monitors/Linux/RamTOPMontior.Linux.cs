@@ -1,8 +1,9 @@
 ﻿using System;
+using Zeus.Monitors.Linux.Commands;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Linux
 {
-    public class UnixRamTOPMontior : IMemoryMonitor
+    public class RamTOPMontior : IMemoryMonitor
     {
         const int BytesInMB = 1024;
 
@@ -17,7 +18,7 @@ namespace Zeus.Linux.Cli
             string totalMemoryAsString;
             int result = 0;
 
-            if (UnixTop.Execute().TryGetValue("memory_total", out totalMemoryAsString))
+            if (Top.Execute().TryGetValue("memory_total", out totalMemoryAsString))
             {
 
                 if (!int.TryParse(totalMemoryAsString, out result))
@@ -36,7 +37,7 @@ namespace Zeus.Linux.Cli
             string availableMemoryAsString;
             int result = 0;
 
-            if (UnixTop.Execute().TryGetValue("memory_free", out availableMemoryAsString))
+            if (Top.Execute().TryGetValue("memory_free", out availableMemoryAsString))
             {
                 if (!int.TryParse(availableMemoryAsString, out result))
                 {

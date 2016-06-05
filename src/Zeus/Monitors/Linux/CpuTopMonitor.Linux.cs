@@ -1,14 +1,15 @@
 ﻿using System;
+using Zeus.Monitors.Linux.Commands;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Linux
 {
-    public class UnixCpuTopMonitor : ICpuMonitor
+    public class CpuTopMonitor : ICpuMonitor
     {
         public CpuInfo GetCpuUsage()
         {
             string availableCpuAsString;
             decimal result = 0;
-            if (UnixTop.Execute().TryGetValue("cpu_free", out availableCpuAsString))
+            if (Top.Execute().TryGetValue("cpu_free", out availableCpuAsString))
             {
                 if (!decimal.TryParse(availableCpuAsString, out result))
                 {

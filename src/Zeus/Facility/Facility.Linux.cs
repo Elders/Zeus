@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Zeus.Linux.Cli.Monitoring;
+using Zeus.Monitors;
+using Zeus.Monitors.Linux;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Facility
 {
     public class Facility : IMonitorFacility
     {
@@ -10,9 +11,9 @@ namespace Zeus.Linux.Cli
 
         public Facility()
         {
-            Register<ICpuMonitor>(() => new UnixCpuTopMonitor());
-            Register<IHDDMonitor>(() => new UnixHDDDFMonitor());
-            Register<IMemoryMonitor>(() => new UnixRamTOPMontior());
+            Register<ICpuMonitor>(() => new CpuTopMonitor());
+            Register<IHDDMonitor>(() => new HDDDFMonitor());
+            Register<IMemoryMonitor>(() => new RamTOPMontior());
         }
 
         public void Register<T>(Func<T> factory)

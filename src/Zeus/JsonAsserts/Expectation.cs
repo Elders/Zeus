@@ -1,12 +1,6 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Zeus.Linux.Cli.Monitoring;
+﻿using System.Collections.Generic;
 
-namespace Zeus.Linux.Cli.JsonAsserts
+namespace Zeus.JsonAsserts
 {
     public class Expectation
     {

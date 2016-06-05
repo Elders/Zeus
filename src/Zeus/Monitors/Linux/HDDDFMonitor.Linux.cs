@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Zeus.Monitors.Linux.Commands;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Linux
 {
-    public class UnixHDDDFMonitor : IHDDMonitor
+    public class HDDDFMonitor : IHDDMonitor
     {
         const int BytesInMB = 1024;
 
@@ -11,7 +12,7 @@ namespace Zeus.Linux.Cli
             var freeSpace = 0m;
             var total = 0m;
 
-            var driveInfo = UnixDF.Execute();
+            var driveInfo = DF.Execute();
 
             var driveTotalAsString = "";
             if (driveInfo.TryGetValue("drive_total", out driveTotalAsString))

@@ -30,7 +30,7 @@
         "System.Management": "4.0.0.0"
       },
       "buildOptions": {
-        "compile": { "exclude": "**/*.Unix.cs" }
+        "compile": { "exclude": "**/*.Linux.cs" }
       }
     }
   },

@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Linux.Commands
 {
-    public static class UnixDF
+    public static class DF
     {
         public static Dictionary<string, string> Execute()
         {
             var result = new Dictionary<string, string>();
 
-            var dfResult = UnixCommand.Execute("df", "-h --total").Split('\n').FirstOrDefault(str => str.Contains("total")).Split(new char[] { ' ' }).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            var dfResult = LinuxCommand.Execute("df", "-h --total").Split('\n').FirstOrDefault(str => str.Contains("total")).Split(new char[] { ' ' }).Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
             var driveTotal = dfResult[1].Replace("G", "");
             var driveUsed = dfResult[2].Replace("G", "");

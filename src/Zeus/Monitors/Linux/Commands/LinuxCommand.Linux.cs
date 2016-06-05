@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Linux.Commands
 {
-    public static class UnixCommand
+    public static class LinuxCommand
     {
         public static string Execute(string command, string commandArgs = "")
         {

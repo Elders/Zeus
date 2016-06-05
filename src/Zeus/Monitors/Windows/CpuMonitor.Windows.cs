@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Management;
-namespace Zeus.Linux.Cli
+
+namespace Zeus.Monitors.Windows
 {
     public class WindowsCpuMonitor : ICpuMonitor
     {

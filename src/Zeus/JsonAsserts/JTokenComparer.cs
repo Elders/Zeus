@@ -1,12 +1,8 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Zeus.Linux.Cli.Monitoring;
 
-namespace Zeus.Linux.Cli.JsonAsserts
+namespace Zeus.JsonAsserts
 {
     public static class JTokenComparer
     {

@@ -1,6 +1,4 @@
-﻿using Zeus.Linux.Cli.Monitoring;
-
-namespace Zeus.Linux.Cli
+﻿namespace Zeus.Facility
 {
     public partial class FacilityResolver
     {

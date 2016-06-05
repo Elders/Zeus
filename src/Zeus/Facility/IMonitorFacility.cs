@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zeus.Linux.Cli.Monitoring
+﻿namespace Zeus.Facility
 {
     public interface IMonitorFacility
     {

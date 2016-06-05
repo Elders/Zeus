@@ -1,10 +1,6 @@
-﻿using CommandLine;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
-using Zeus.Linux.Cli.Monitoring;
+﻿using Zeus.Monitors;
 
-namespace Zeus.Linux.Cli.Commands
+namespace Zeus.Commands.MachineStatus
 {
     public class CpuResult
     {

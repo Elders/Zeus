@@ -1,10 +1,10 @@
 ﻿using CommandLine;
-using Zeus.Linux.Cli.Commands;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
+using Zeus.Commands;
 
-namespace Zeus.Linux.Cli
+namespace Zeus
 {
     public class Program
     {

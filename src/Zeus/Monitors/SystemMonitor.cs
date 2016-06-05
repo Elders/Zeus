@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Zeus.Facility;
 
-namespace Zeus.Linux.Cli.Monitoring
+namespace Zeus.Monitors
 {
     public class SystemMonitor
     {

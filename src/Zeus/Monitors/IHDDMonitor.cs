@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors
 {
     public interface IHDDMonitor
     {

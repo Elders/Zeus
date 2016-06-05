@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Zeus.Linux.Cli
+namespace Zeus.Monitors.Linux.Commands
 {
-    public static class UnixTop
+    public static class Top
     {
         public static Dictionary<string, string> Execute()
         {
             var result = new Dictionary<string, string>();
 
-            var top = UnixCommand.Execute("top", "-b -n 1");
+            var top = LinuxCommand.Execute("top", "-b -n 1");
             var topRows = top.Split('\n').Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
             for (int row = 1; row < topRows.Length; row++)
