@@ -26,5 +26,10 @@ namespace Zeus.JsonAsserts
         }
 
         public Queue<string> QueryParts { get { return new Queue<string>(Query.Split('.')); } }
+
+        public override string ToString()
+        {
+            return $"{Query}:{Assertion}:{ExpectedValue}";
+        }
     }
 }

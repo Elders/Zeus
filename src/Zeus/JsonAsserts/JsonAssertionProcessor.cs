@@ -58,7 +58,7 @@ namespace Zeus.JsonAsserts
             else if (result == -1 && expectation.Assertion == "below")
                 return ExpectiationResult.Success(expectation);
             else
-                return ExpectiationResult.Error(expectation, "Expectation failed");
+                return ExpectiationResult.Error(expectation, $"Expectation '{expectation.ToString()}' failed");
         }
 
 
