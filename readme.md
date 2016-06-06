@@ -3,17 +3,17 @@
 Zeus is portable CLI tool for machine monitoring built on top of .net core.
 ## Releases
 
-### [V1.0.0](https://github.com/Elders/Zeus/releases)
+### Latest [v1.0.1](https://github.com/Elders/Zeus/releases)
 Zeus is built with dotnet core 1.0 rc-2, so the targeted runtimes are pretty specific, however it should be possible to run a distribution on older versions of specified operating system.
 The windows version requires .Net 4.5+ to be installed on the host OS.
 
 |Operating System| 
 |   :---:      |      
-| [Ubuntu 15.04-x64]()          | 
-| [Debian 8.2-x64](https://github.com/Elders/Zeus/releases/download/1.0.0/debian.8.2-x64.zip)            | 
-| [CentOS 7-x64](https://github.com/Elders/Zeus/releases/download/1.0.0/centos.7-x64.zip)              |
+| [Ubuntu 15.04-x64](https://github.com/Elders/Zeus/releases/download/1.0.1/ubuntu.15.04-x64.zip)          | 
+| [Debian 8.2-x64](https://github.com/Elders/Zeus/releases/download/1.0.1/debian.8.2-x64.zip)            | 
+| [CentOS 7-x64](https://github.com/Elders/Zeus/releases/download/1.0.1/centos.7-x64.zip)              |
 | [Windows 7 -x86 or above](https://github.com/Elders/Zeus/releases/download/1.0.0/win-x86.zip)   |
-| [Windows 7 -x64 or above](https://github.com/Elders/Zeus/releases/download/1.0.0/ubuntu.15.04-x64.zip)   | 
+| [Windows 7 -x64 or above](https://github.com/Elders/Zeus/releases/download/1.0.1/win10-x64.zip)   | 
 
 ## Usage
 
