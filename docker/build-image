@@ -1,2 +1,0 @@
-clean-images-and-containers
-docker build -t eldersoss/consul-healthcheck:latest .

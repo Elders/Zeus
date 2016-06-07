@@ -1,1 +1,0 @@
-docker ps -a | grep 'minutes ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm && docker ps -a | grep 'seconds ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm && docker ps -a | grep 'minute ago' | awk '{print $1}'  | xargs --no-run-if-empty docker rm && docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
