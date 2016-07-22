@@ -1,4 +1,6 @@
 {
+  "title": "Zeus",
+  "copyright": "Elders",
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true
