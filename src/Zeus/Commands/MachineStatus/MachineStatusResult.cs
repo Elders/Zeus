@@ -21,6 +21,7 @@ namespace Zeus.Commands.MachineStatus
                 Drives.Add(total.VolumeName, new DriveResult(total));
             }
             Ram = new MemoryResult(status.MemoryInfo);
+            Environment = new EnvResult(status.EnvInfo);
         }
 
         public CpuResult Cpu { get; set; }
@@ -28,6 +29,8 @@ namespace Zeus.Commands.MachineStatus
         public Dictionary<string, DriveResult> Drives { get; set; }
 
         public MemoryResult Ram { get; set; }
+
+        public EnvResult Environment { get; set; }
 
         public bool Success { get { return Error == false; } }
 
