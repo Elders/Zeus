@@ -24,7 +24,7 @@ Outputs the system CPU,RAM and HDD
 > $ zeus machine
 
 ```
-{"cpu":{"usage":10.0},"drives":{"c":{"free":18095.0,"total":111939.0,"occupied":93844.0,"usage":83.83494581870483030936492197},"d":{"free":504512.0,"total":937264.0,"occupied":432752.0,"usage":46.171836323597193533518837810},"total":{"free":522607.0,"total":1049203.0,"occupied":526596.0,"usage":50.190096673379698685573716430}},"ram":{"free":6471.0,"total":16326.0,"occupied":9855.0,"usage":60.363836824696802646085997790},"success":true,"error":false}
+{"cpu":{"usage":10.0},"drives":{"c":{"free":18095.0,"total":111939.0,"occupied":93844.0,"usage":83.83494581870483030936492197},"d":{"free":504512.0,"total":937264.0,"occupied":432752.0,"usage":46.171836323597193533518837810},"total":{"free":522607.0,"total":1049203.0,"occupied":526596.0,"usage":50.190096673379698685573716430}},"ram":{"free":6471.0,"total":16326.0,"occupied":9855.0,"usage":60.363836824696802646085997790},"environment": {"os": "Microsoft Windows 10 Enterprise","time": "2016-09-07 10:52","timeZone": "FLE Standard Time","utcOffset": "3"},"success":true,"error":false}
 ```
 ##### Formatting the output
 - -f
@@ -64,6 +64,12 @@ By defaul the output its not formated becouse its most like that a machine will 
     "total": 16326.0,
     "occupied": 9709.0,
     "usage": 59.469557760627220384662501530
+  },
+  "environment": {
+    "os": "Microsoft Windows 10 Enterprise",
+    "time": "2016-09-07 10:52",
+    "timeZone": "FLE Standard Time",
+    "utcOffset": "3"
   },
   "success": true,
   "error": false
@@ -111,7 +117,13 @@ You can also make assertions on the system state like **path:expectaion:value**
     "total": 16326.0,                                      
     "occupied": 10105.0,                                   
     "usage": 61.895136591939238025235820160                
-  },                                                       
+  },
+  "environment": {
+    "os": "Microsoft Windows 10 Enterprise",
+    "time": "2016-09-07 10:52",
+    "timeZone": "FLE Standard Time",
+    "utcOffset": "3"
+  },
   "success": false,                                        
   "error": true,                                           
   "errors": [                                              
