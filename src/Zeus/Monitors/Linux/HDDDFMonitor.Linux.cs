@@ -9,35 +9,44 @@ namespace Zeus.Monitors.Linux
 
         public IEnumerable<DriveInfo> GetHDDUsage()
         {
+            var result = new List<DriveInfo>();
             var freeSpace = 0m;
             var total = 0m;
 
-            var driveInfo = DF.Execute();
+            var drives = DF.Execute();
 
-            var driveTotalAsString = "";
-            if (driveInfo.TryGetValue("drive_total", out driveTotalAsString))
+            foreach (var driveInfo in drives)
             {
+                var driveNameAsString = "";
+                if (driveInfo.TryGetValue("drive_name", out driveNameAsString)) { }
 
-                decimal driveTotalAsDecimal = 0;
-                if (decimal.TryParse(driveTotalAsString, out driveTotalAsDecimal))
+                var driveTotalAsString = "";
+                if (driveInfo.TryGetValue("drive_total", out driveTotalAsString))
                 {
-                    total = driveTotalAsDecimal * BytesInMB;// GiB to MiB
+                    ulong driveTotalAsDecimal = 0;
+                    if (ulong.TryParse(driveTotalAsString, out driveTotalAsDecimal))
+                    {
+                        total = driveTotalAsDecimal / BytesInMB;// B to MiB
+                    }
+
                 }
+
+                var driveFreeAsString = "";
+                if (driveInfo.TryGetValue("drive_free", out driveFreeAsString))
+                {
+                    ulong driveFreeAsDecimal = 0;
+                    if (ulong.TryParse(driveFreeAsString, out driveFreeAsDecimal))
+                    {
+                        freeSpace = driveFreeAsDecimal / BytesInMB; // B to MiB
+                    }
+
+                }
+
+                result.Add(new DriveInfo(driveNameAsString, (int)total, (int)freeSpace));
 
             }
 
-            var driveFreeAsString = "";
-            if (driveInfo.TryGetValue("drive_free", out driveFreeAsString))
-            {
-                decimal driveFreeAsDecimal = 0;
-                if (decimal.TryParse(driveFreeAsString, out driveFreeAsDecimal))
-                {
-                    freeSpace = driveFreeAsDecimal * BytesInMB; // GiB to MiB
-                }
-
-            }
-
-            yield return new DriveInfo("total", (int)total, (int)freeSpace);
+            return result;
         }
     }
 }
