@@ -13,20 +13,20 @@
   },
 
   "frameworks": {
-    //"netcoreapp1.0": {
-    //  "dependencies": {
-    //    "Microsoft.NETCore.App": {
-    //      "version": "1.0.0-rc2-3002702"
-    //    }
-    //  },
-    //  "imports": [
-    //    "dnxcore50"
-    //  ],
-    //  "buildOptions": {
-    //    "compile": { "exclude": "**/*.Windows.cs" }
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.0-rc2-3002702"
+        }
+      },
+      "imports": [
+        "dnxcore50"
+      ],
+      "buildOptions": {
+        "compile": { "exclude": "**/*.Windows.cs" }
 
-    //  }
-    //},
+      }
+    },
     "net46": {
       "frameworkAssemblies": {
         "System.Management": "4.0.0.0"

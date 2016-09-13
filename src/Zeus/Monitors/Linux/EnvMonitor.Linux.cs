@@ -12,7 +12,8 @@ namespace Zeus.Monitors.Linux
             var osName = LinuxCommand.Execute("cat", "/etc/issue");
 
             var time = DateTime.Now;
-            TimeZone localZone = TimeZone.CurrentTimeZone;
+
+            TimeZoneInfo localZone = TimeZoneInfo.Local;
             string zone = localZone.StandardName;
             string utcOffset = localZone.GetUtcOffset(time).TotalHours.ToString();
             var timeInfo = new EnvTimeInfo(String.Format(timeFmt, time), zone, utcOffset);
