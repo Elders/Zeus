@@ -55,7 +55,7 @@ set zip="C:\Program Files\7-Zip\7z.exe"
 
 echo Publishing .\build\Release\%runtime%.zip
 
-%zip% a -tzip .\build\Release\%runtime%.zip .\build\Release\%runtime%
+%zip% a -tzip .\build\Release\zeus-%runtime%.zip .\build\Release\%runtime%
 EXIT /B 0
 
 :clean
