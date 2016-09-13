@@ -6,7 +6,7 @@ namespace Zeus.Monitors.Windows
 {
     public class WindowsEnvMonitor : IEnvMonitor
     {
-        const string timeFmt = "{0:yyyy-MM-dd HH:mm:SS}";
+        const string timeFmt = "{0:yyyy-MM-dd HH:mm:ss}";
 
         public EnvInfo GetEnvInfo()
         {
