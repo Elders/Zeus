@@ -16,7 +16,6 @@ namespace Zeus.Monitors.Linux
                     throw new ArgumentException("CPU usage cannot be parsed to float (" + availableCpuAsString + ")");
                 }
             }
-            result = 100 - result;
             return new CpuInfo(result);
         }
     }

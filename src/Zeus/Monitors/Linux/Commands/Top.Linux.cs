@@ -9,6 +9,15 @@ namespace Zeus.Monitors.Linux.Commands
         {
             var result = new Dictionary<string, string>();
 
+            result.Concat(GetRam(result));
+            result.Concat(GetCPU(result));
+
+
+            return result;
+        }
+
+        private static Dictionary<string, string> GetRam(Dictionary<string, string> result)
+        {
             var top = LinuxCommand.Execute("top", "-b -n 1");
             var topRows = top.Split('\n').Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
@@ -18,18 +27,6 @@ namespace Zeus.Monitors.Linux.Commands
 
                 for (int col = 0; col < currentRow.Length; col++)
                 {
-                    //CPU
-                    if (row == 2)
-                    {
-                        if (currentRow[col].Contains("id"))
-                        {
-                            var freeCpu = currentRow[col - 1];
-
-                            result.Add("cpu_free", freeCpu);
-                            break;
-                        }
-                    }
-
                     //Memory
                     if (row == 3)
                     {
@@ -48,6 +45,54 @@ namespace Zeus.Monitors.Linux.Commands
                     }
                 }
             }
+
+            return result;
+        }
+
+        private static Dictionary<string, string> GetCPU(Dictionary<string, string> result)
+        {
+            var top = LinuxCommand.Execute("top", "-b -n 2");
+            var topRows = top.Split('\n').Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
+            var tops = 0;
+            var indexToRemove = 0;
+
+            foreach (var row in topRows)
+            {
+                indexToRemove++;
+                if (row.Contains("top -"))
+                {
+                    tops++;
+                    if (tops == 2)
+                    {
+                        break;
+                    }
+
+                }
+            }
+
+            for (int row = indexToRemove; row < topRows.Length; row++)
+            {
+                var currentRow = topRows[row].Split(' ').Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
+                for (int col = 0; col < currentRow.Length; col++)
+                {
+                    //Memory
+
+                    if (row == indexToRemove + 1)
+                    {
+                        if (currentRow[col].Contains("us"))
+                        {
+                            var freeCpu = currentRow[col - 1];
+                            result.Add("cpu_free", freeCpu);
+                            break;
+                        }
+
+                    }
+                }
+            }
+
+
 
             return result;
         }
