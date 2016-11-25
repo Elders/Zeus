@@ -2,7 +2,7 @@
   "profiles": {
     "Zeus.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "machine -e drives.c.free:above:20000 -f"
+      "commandLineArgs": "process -n slack.exe -e ram.10592.usage:below:10  -f"
     },
     "Zeus": {
       "commandName": "Project"

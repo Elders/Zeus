@@ -15,6 +15,8 @@ namespace Zeus.Facility
             Register<IHDDMonitor>(() => new WindowsHDDMonitor());
             Register<IMemoryMonitor>(() => new WindowsRamMontior());
             Register<IEnvMonitor>(() => new WindowsEnvMonitor());
+            Register<IProcessCpuMonitor>(() => new WindowsProcessCpuMonitor());
+            Register<IProcessMemoryMonitor>(() => new WindowsProcessRamMontior());
         }
 
         public void Register<T>(Func<T> factory)

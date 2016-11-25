@@ -13,6 +13,14 @@
   },
 
   "frameworks": {
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Management": "4.0.0.0"
+      },
+      "buildOptions": {
+        "compile": { "exclude": "**/*.Linux.cs" }
+      }
+    },
     "netcoreapp1.0": {
       "dependencies": {
         "Microsoft.NETCore.App": {
@@ -26,15 +34,8 @@
         "compile": { "exclude": "**/*.Windows.cs" }
 
       }
-    },
-    "net46": {
-      "frameworkAssemblies": {
-        "System.Management": "4.0.0.0"
-      },
-      "buildOptions": {
-        "compile": { "exclude": "**/*.Linux.cs" }
-      }
     }
+
   },
   "runtimes": {
     "win7-x64": { },

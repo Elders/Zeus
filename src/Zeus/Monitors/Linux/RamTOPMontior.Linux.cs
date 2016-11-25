@@ -27,7 +27,7 @@ namespace Zeus.Monitors.Linux
                 }
             }
 
-            result = result / BytesInMB; ; //Kib to MiB
+            result = result / BytesInMB;  //Kib to MiB
 
             return result;
         }
