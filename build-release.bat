@@ -4,24 +4,11 @@ call :clean .\build
 
 CALL dotnet restore .\src\Zeus
 
-call :publish debian.8.2-x64 netcoreapp1.0
+call :publish debian.8-x64 netcoreapp1.0
 
 call :publish win10-x64 net46
 
 call :publish win10-x86 net46
-
-call :publish centos.7-x64 netcoreapp1.0
-
-call :publish ubuntu.15.04-x64 netcoreapp1.0
-
-
-
-
-
-
-
-
-
 
 
 
