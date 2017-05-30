@@ -10,33 +10,31 @@ namespace Zeus.Monitors.Linux.Commands
         {
             try
             {
-                Process testProcess = new Process();
-                string result = "";
-
-                testProcess.StartInfo.FileName = command;
-
-                testProcess.StartInfo.UseShellExecute = false;
-                testProcess.StartInfo.RedirectStandardInput = true;
-                testProcess.StartInfo.RedirectStandardOutput = true;
-
-                if (!string.IsNullOrEmpty(commandArgs))
+                using (Process process = new Process())
                 {
-                    testProcess.StartInfo.Arguments = commandArgs;
+                    string result = "";
+
+                    process.StartInfo.FileName = command;
+
+                    process.StartInfo.UseShellExecute = false;
+                    process.EnableRaisingEvents = true;
+                    process.StartInfo.RedirectStandardInput = true;
+                    process.StartInfo.RedirectStandardOutput = true;
+
+                    if (!string.IsNullOrEmpty(commandArgs))
+                    {
+                        process.StartInfo.Arguments = commandArgs;
+                    }
+
+
+                    process.Start();
+
+                    StreamReader sOut = process.StandardOutput;
+
+                    result = sOut.ReadToEnd();
+                     
+                    return result;
                 }
-
-
-                testProcess.Start();
-
-                StreamReader sOut = testProcess.StandardOutput;
-
-                result = sOut.ReadToEnd();
-
-                if (!testProcess.HasExited)
-                {
-                    testProcess.Kill();
-                }
-
-                return result;
             }
             catch (Exception ex)
             {
