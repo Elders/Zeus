@@ -1,4 +1,4 @@
-@echo off
+#@echo off
 
 call :clean .\build
 
@@ -48,8 +48,8 @@ if "%framework%"=="" (
 	EXIT /B 0
 )
 echo "Building for %runtime% targeting %framework%"
-
-CALL dotnet publish .\src\Zeus -o .\build\Release\%runtime% -r %runtime% -f %framework% -c Release
+set outputPath=%~dp0build\Release\%runtime%
+CALL dotnet publish .\src\Zeus -o %outputPath% -r %runtime% -f %framework% -c Release -v d
 
 set zip="C:\Program Files\7-Zip\7z.exe"
 

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Copyright>Elders</Copyright>
+    <AssemblyTitle>Zeus</AssemblyTitle>
+    <TargetFrameworks>netcoreapp1.0;net46</TargetFrameworks>
+    <AssemblyName>Zeus</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Zeus</PackageId>
+    <RuntimeIdentifiers>win7-x64;win7-x86;win8-x64;win8-x86;win10-x64;win10-x86;rhel.7.0-x64;rhel.7.1-x64;rhel.7.2-x64;ubuntu.14.04-x64;ubuntu.14.10-x64;ubuntu.15.04-x64;centos.7-x64;centos.7.1-x64;debian.8-x64;debian.8.2-x64;linuxmint.17-x64;linuxmint.17.1-x64;linuxmint.17.2-x64;linuxmint.17.3-x64;osx.10.10-x64;osx.10.11-x64</RuntimeIdentifiers>
+    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <RuntimeFrameworkVersion Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">1.0.4</RuntimeFrameworkVersion>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.NETCore.Runtime" Version="1.0.2-rc2-24027" />
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
+    <Compile Remove="**\*.Windows.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <Compile Remove="**\*.Linux.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <Reference Include="System.Management" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
