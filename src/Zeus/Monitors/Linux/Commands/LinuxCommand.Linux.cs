@@ -38,7 +38,7 @@ namespace Zeus.Monitors.Linux.Commands
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("System cannot find \"" + command + "\" command to execute! Pleasee check your runtime environment");
+                throw new ArgumentException("System cannot find \"" + command + "\" command to execute! Pleasee check your runtime environment",ex);
             }
         }
     }
