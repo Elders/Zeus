@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Copyright>Elders</Copyright>
     <AssemblyTitle>Zeus</AssemblyTitle>
-    <TargetFrameworks>netcoreapp1.0;net46</TargetFrameworks>
+    <TargetFrameworks>net46;netcoreapp1.0</TargetFrameworks>
     <AssemblyName>Zeus</AssemblyName>
-    <OutputType>Exe</OutputType>
+    <OutputType>exe</OutputType>
     <PackageId>Zeus</PackageId>
     <RuntimeIdentifiers>win7-x64;win7-x86;win8-x64;win8-x86;win10-x64;win10-x86;rhel.7.0-x64;rhel.7.1-x64;rhel.7.2-x64;ubuntu.14.04-x64;ubuntu.14.10-x64;ubuntu.15.04-x64;centos.7-x64;centos.7.1-x64;debian.8-x64;debian.8.2-x64;linuxmint.17-x64;linuxmint.17.1-x64;linuxmint.17.2-x64;linuxmint.17.3-x64;osx.10.10-x64;osx.10.11-x64</RuntimeIdentifiers>
     <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
@@ -18,6 +18,9 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <ApplicationIcon />
+    <OutputTypeEx>exe</OutputTypeEx>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
